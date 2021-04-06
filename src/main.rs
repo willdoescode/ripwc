@@ -15,10 +15,13 @@ fn main() {
 				println!("Total bytes in file: {}", input.as_bytes().len())
 			}
 			if opts.l {
-				println!("Total lines in file: {}", input
-					.split("\n")
-					.fold(0, |acc, _| acc + 1)
-				)
+				println!("Total lines in file: {}", count_up(input.split("\n")));
+			}
+			if opts.w {
+				println!("Total words in file: {}", count_up(input.split(" ")));
+			}
+			if opts.m {
+				println!("Total chars in file: {}", count_up(input.chars()))
 			}
 		},
 		Err(err) => {
@@ -26,6 +29,10 @@ fn main() {
 			std::process::exit(1);
 		},
 	}
+}
+
+fn count_up(input: impl Iterator) -> i32 {
+	input.fold(0, |acc, _| acc + 1)
 }
 
 fn get_input(opts: &Opts) -> Result<String, Box<dyn Error>> {
