@@ -1,4 +1,3 @@
-use clap::Clap;
 use args::Opts;
 mod args;
 use std::io::Read;
