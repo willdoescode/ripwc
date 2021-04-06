@@ -1,5 +1,3 @@
-#[allow(unused_imports)]
-use std::path::PathBuf;
 use clap::Clap;
 use args::Opts;
 mod args;
