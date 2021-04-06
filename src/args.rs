@@ -1,6 +1,9 @@
 #![allow(unused_mut)]
-use std::path::PathBuf;
-use std::env;
+use std::{
+	iter::Peekable,
+	path::PathBuf,
+	env,
+};
 
 const HELP: &'static str = r#"ripwc
 William L. <williamlane923@gmail.com>

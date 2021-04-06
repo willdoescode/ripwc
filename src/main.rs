@@ -1,8 +1,10 @@
 use args::Opts;
 mod args;
-use std::io::Read;
-use std::fs::File;
-use std::error::Error;
+use std::{
+	io::Read,
+	fs::File,
+	error::Error,
+};
 
 fn main() {
 	let opts: Opts = Opts::parse();
