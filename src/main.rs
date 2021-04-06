@@ -14,6 +14,12 @@ fn main() {
 			if opts.c {
 				println!("Total bytes in file: {}", input.as_bytes().len())
 			}
+			if opts.l {
+				println!("Total lines in file: {}", input
+					.split("\n")
+					.fold(0, |acc, _| acc + 1)
+				)
+			}
 		},
 		Err(err) => {
 			eprintln!("{}", err.to_string());
